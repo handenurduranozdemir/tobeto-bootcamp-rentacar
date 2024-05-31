@@ -29,6 +29,6 @@ public class Model extends BaseEntity {
     @JoinColumn(name = "transmissionId")
     private Transmission transmission;
 
-    @OneToMany(mappedBy = "model")
+    @OneToMany(mappedBy = "model", cascade = CascadeType.ALL)
     private List<Car> cars;
 }

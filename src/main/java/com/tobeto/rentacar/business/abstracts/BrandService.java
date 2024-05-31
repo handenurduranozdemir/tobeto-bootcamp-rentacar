@@ -1,12 +1,18 @@
 package com.tobeto.rentacar.business.abstracts;
 
-import com.tobeto.rentacar.business.dtos.request.CreateBrandRequest;
-import com.tobeto.rentacar.business.dtos.responses.CreatedBrandResponse;
-import com.tobeto.rentacar.business.dtos.responses.GetAllBrandResponse;
+import com.tobeto.rentacar.business.dtos.request.brand.CreateBrandRequest;
+import com.tobeto.rentacar.business.dtos.request.brand.UpdateBrandRequest;
+import com.tobeto.rentacar.business.dtos.responses.brand.CreatedBrandResponse;
+import com.tobeto.rentacar.business.dtos.responses.brand.GetAllBrandResponse;
+import com.tobeto.rentacar.business.dtos.responses.brand.GetBrandByIdResponse;
+import com.tobeto.rentacar.business.dtos.responses.brand.UpdateBrandResponse;
 
 import java.util.List;
 
 public interface BrandService {
-    CreatedBrandResponse add (CreateBrandRequest createdBrandRequest);
-    List<GetAllBrandResponse> getAll();
+    CreatedBrandResponse createBrand(CreateBrandRequest createBrandRequest);
+    List<GetAllBrandResponse> getAllBrands();
+    GetBrandByIdResponse getBrandById(int id);
+    UpdateBrandResponse updateBrandById(UpdateBrandRequest updateBrandRequest, int id);
+    void deleteBrandById(int id);
 }
