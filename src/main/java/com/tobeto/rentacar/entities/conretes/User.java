@@ -2,10 +2,7 @@ package com.tobeto.rentacar.entities.conretes;
 
 import com.tobeto.rentacar.core.entities.BaseEntity;
 import com.tobeto.rentacar.entities.conretes.enums.UserRole;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -55,4 +52,7 @@ public class User /*extends BaseEntity*/ implements UserDetails  {
     public boolean isEnabled() {
         return true;
     }
+
+    @OneToMany(mappedBy = "user")
+    private List<Rental> rentals;
 }
